@@ -1,1 +1,1 @@
-console.log("Hello npm!");
+(()=>{const o={index:()=>console.log("Hello from the NS side")};(()=>{"use strict";return{init:()=>{const t=document.body.id;o[t]()}}})().init()})();
