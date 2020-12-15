@@ -1,25 +1,13 @@
-import {createMovieUI} from "./modules/movie-ui";
-import {addWindowListener} from "./modules/window-listener";
-import {getWatchlist} from "./modules/watchlist";
+import {initIndex} from "./modules/ui/index-ui";
+import {addWindowListener} from "./modules/utils/event-listener";
+import {initWatchlist} from "./modules/ui/watchlist-ui";
 
 const INIT_FUNCTIONS = {
     'page-index': () => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=0f2fb5bb9dd4392d617cd67097866357`)
-            .then(response => response.json())
-            .then(response => response.results)
-            .then(movies => {
-                const moviesUI = document.getElementById('popular-movies');
-                movies.forEach(movie => createMovieUI(movie, moviesUI));
-            });
+        initIndex();
     },
     'page-watchlist': () => {
-        const watchlistUI = document.getElementById('watchlist');
-        const watchlist = getWatchlist();
-        watchlist.forEach(movie => {
-            const movieUI = document.createElement('li');
-            movieUI.textContent = movie;
-            watchlistUI.appendChild(movieUI);
-        })
+        initWatchlist();
     }
 }
 
