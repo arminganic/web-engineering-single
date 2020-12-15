@@ -4,7 +4,7 @@ let createMovieUI = (movie, container) => {
 
     const posterUI = document.createElement('img');
     posterUI.classList.add('movie__poster');
-    posterUI.src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
+    posterUI.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
     const overviewUI = createOverviewUI(movie);
     const footerUI = createFooterUI(movie);

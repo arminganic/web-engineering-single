@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+:root {
+    --primary-color: #0336ff;
+    --accent-color: #ffcd03;
+}
 
 * {
     margin: 0;
@@ -18,7 +24,7 @@ body {
             'nav';
     grid-template-rows: 1fr auto;
 
-    background-color: #0336ff;
+    background-color: var(--primary-color);
 }
 
 .nav {
@@ -30,7 +36,10 @@ body {
     position: sticky;
     bottom: 0;
 
-    background-color: #ffcd03;
+    background-color: var(--primary-color);
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
+    opacity: 0.8;
+    backdrop-filter: blur(8px);
     z-index: 10000;
 }
 
@@ -42,10 +51,23 @@ body {
 
 .nav__item {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
 }
 
-.nav__item:hover {
-    background-color: #ffc400;
+.nav__icon, .nav__title {
+    color: white;
+}
+
+.nav__item--active .nav__icon, .nav__item--active .nav__title {
+    color: var(--accent-color);
+}
+
+.nav__item:hover .nav__icon, .nav__item:hover .nav__title {
+    color: var(--accent-color);
 }
 
 .content {
@@ -85,12 +107,12 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.movie__overview {
-    margin: 1rem;
-}
-
 .movie:hover .movie__details {
     transform: translateY(0%);
+}
+
+.movie__overview {
+    margin: 1rem;
 }
 
 .movie__poster {
@@ -105,7 +127,7 @@ body {
 }
 
 .movie__rating {
-    padding: 0.25rem;
+    padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
 }
 
