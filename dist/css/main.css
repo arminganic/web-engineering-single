@@ -30,27 +30,27 @@ body {
 }
 
 h1 {
-    font-size: 90px;
+    font-size: 68px;
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 45px;
 }
 
 h3 {
-    font-size: 48px;
+    font-size: 36px;
 }
 
 h4 {
-    font-size: 34px;
+    font-size: 26px;
 }
 
 h5 {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 h6 {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .btn {
@@ -117,7 +117,7 @@ h6 {
 
 .content__title {
     color: #FFFFFF;
-    margin: 2rem 3rem;
+    margin: 2rem 1rem;
 }
 
 .content__movies {
@@ -207,6 +207,30 @@ h6 {
         grid-template-areas: 'nav content';
     }
 
+    h1 {
+        font-size: 90px;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 48px;
+    }
+
+    h4 {
+        font-size: 34px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 20px;
+    }
+
     .nav {
         width: var(--sidebar-width);
         padding: 9rem 1rem 1rem 1rem;
@@ -220,7 +244,7 @@ h6 {
     }
 
     .nav--on-scroll {
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .nav__content {
@@ -238,6 +262,10 @@ h6 {
 
     .content__movies {
         padding-left: var(--sidebar-width);
+    }
+
+    .content__title {
+        margin: 2rem 3rem;
     }
 
     .movie {
