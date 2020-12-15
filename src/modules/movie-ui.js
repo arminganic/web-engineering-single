@@ -1,3 +1,5 @@
+import {isInWatchlist, toggleWatchlist} from "./watchlist";
+
 let createMovieUI = (movie, container) => {
     const movieUI = document.createElement('article');
     movieUI.classList.add('movie');
@@ -29,7 +31,7 @@ let createOverviewUI = (movie) => {
     const actionsUI = document.createElement('div');
     actionsUI.classList.add('movie__actions');
 
-    const watchlistButtonUI = createWatchlistButtonUI();
+    const watchlistButtonUI = createWatchlistButtonUI(movie);
     actionsUI.appendChild(watchlistButtonUI);
 
     containerUI.appendChild(footerUI);
@@ -39,7 +41,7 @@ let createOverviewUI = (movie) => {
     return containerUI;
 }
 
-let createWatchlistButtonUI = () => {
+let createWatchlistButtonUI = (movie) => {
     const containerUI = document.createElement('button');
     containerUI.classList.add('btn');
     containerUI.classList.add('btn--100');
@@ -47,15 +49,30 @@ let createWatchlistButtonUI = () => {
 
     const iconUI = document.createElement('em');
     iconUI.classList.add('material-icons-outlined');
-    iconUI.textContent = 'add';
 
     const titleUI = document.createElement('span');
-    titleUI.textContent = 'Add to Watchlist';
+    titleUI.textContent = 'Watchlist';
 
+    adjustWatchlistButtonUI(containerUI, iconUI, movie);
+    containerUI.addEventListener('click', () => {
+        toggleWatchlist(movie);
+        adjustWatchlistButtonUI(containerUI, iconUI, movie);
+    });
     containerUI.appendChild(iconUI);
     containerUI.appendChild(titleUI);
 
     return containerUI;
+}
+
+let adjustWatchlistButtonUI = (containerUI, iconUI, movie) => {
+    const movieInWatchlist = isInWatchlist(movie);
+    if (movieInWatchlist) {
+        iconUI.textContent = 'remove';
+        containerUI.classList.add('btn--danger');
+    } else {
+        iconUI.textContent = 'add';
+        containerUI.classList.remove('btn--danger');
+    }
 }
 
 let createFooterUI = (movie) => {

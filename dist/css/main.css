@@ -73,8 +73,16 @@ h6 {
     justify-content: center;
 }
 
+.btn--danger {
+    background-color: #FFEBEE;
+}
+
 .btn > span {
     margin-left: 0.5rem;
+}
+
+.btn--danger > span, .btn--danger em {
+    color: #E57373;
 }
 
 .nav {
@@ -188,6 +196,9 @@ h6 {
 .movie__title {
     margin-right: 1rem;
     font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movie__rating {
