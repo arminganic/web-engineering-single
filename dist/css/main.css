@@ -65,6 +65,14 @@ h6 {
     background-color: var(--gray-100);
 }
 
+.btn--100 {
+    width: 100%;
+}
+
+.btn--center {
+    justify-content: center;
+}
+
 .btn > span {
     margin-left: 0.5rem;
 }

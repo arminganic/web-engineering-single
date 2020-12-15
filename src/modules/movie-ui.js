@@ -42,6 +42,8 @@ let createOverviewUI = (movie) => {
 let createWatchlistButtonUI = () => {
     const containerUI = document.createElement('button');
     containerUI.classList.add('btn');
+    containerUI.classList.add('btn--100');
+    containerUI.classList.add('btn--center');
 
     const iconUI = document.createElement('em');
     iconUI.classList.add('material-icons-outlined');
