@@ -29,6 +29,30 @@ body {
     background-color: var(--primary-color);
 }
 
+h1 {
+    font-size: 90px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 48px;
+}
+
+h4 {
+    font-size: 34px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -91,6 +115,11 @@ body {
     grid-area: content;
 }
 
+.content__title {
+    color: #FFFFFF;
+    margin: 2rem 3rem;
+}
+
 .content__movies {
     margin-left: auto;
     margin-right: auto;
@@ -150,6 +179,7 @@ body {
 
 .movie__title {
     margin-right: 1rem;
+    font-size: 18px;
 }
 
 .movie__rating {
@@ -179,13 +209,18 @@ body {
 
     .nav {
         width: var(--sidebar-width);
-        padding: 3rem 1rem;
+        padding: 9rem 1rem 1rem 1rem;
         position: fixed;
         top: 0;
         left: 0;
         box-shadow: none;
         backdrop-filter: none;
         opacity: 1;
+        transition: padding 0.3s ease-in-out;
+    }
+
+    .nav--on-scroll {
+        padding: 1rem;
     }
 
     .nav__content {

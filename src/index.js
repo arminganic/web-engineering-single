@@ -25,4 +25,15 @@ const app = (() => {
     }
 })();
 
+let changeCSS = () => {
+    const sidebar = document.querySelector('nav');
+    if (window.pageYOffset > 75) {
+        sidebar.classList.add('nav--on-scroll');
+    } else {
+        sidebar.classList.remove('nav--on-scroll');
+    }
+}
+
+window.addEventListener("scroll", changeCSS, false);
+
 app.init();
