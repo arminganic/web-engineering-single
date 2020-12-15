@@ -23,4 +23,4 @@ let saveWatchlist = (watchlist) => {
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
 }
 
-export {toggleWatchlist, isInWatchlist};
+export {toggleWatchlist, isInWatchlist, getWatchlist};
