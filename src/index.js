@@ -1,4 +1,5 @@
 import {createMovieUI} from "./modules/movie-ui";
+import {addWindowListener} from "./modules/window-listener";
 
 const INIT_FUNCTIONS = {
     index: () => {
@@ -20,20 +21,15 @@ const app = (() => {
         INIT_FUNCTIONS[bodyId]();
     }
 
+    const initWindowListener = () => {
+        addWindowListener();
+    }
+
     return {
         init: initSpecificPage,
+        initWindowListener: initWindowListener,
     }
 })();
 
-let changeCSS = () => {
-    const sidebar = document.querySelector('nav');
-    if (window.pageYOffset > 75) {
-        sidebar.classList.add('nav--on-scroll');
-    } else {
-        sidebar.classList.remove('nav--on-scroll');
-    }
-}
-
-window.addEventListener("scroll", changeCSS, false);
-
+app.initWindowListener();
 app.init();
