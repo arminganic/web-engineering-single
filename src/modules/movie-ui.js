@@ -26,8 +26,32 @@ let createOverviewUI = (movie) => {
     contentUI.classList.add('movie__overview');
     contentUI.textContent = movie.overview;
 
+    const actionsUI = document.createElement('div');
+    actionsUI.classList.add('movie__actions');
+
+    const watchlistButtonUI = createWatchlistButtonUI();
+    actionsUI.appendChild(watchlistButtonUI);
+
     containerUI.appendChild(footerUI);
     containerUI.appendChild(contentUI);
+    containerUI.appendChild(actionsUI);
+
+    return containerUI;
+}
+
+let createWatchlistButtonUI = () => {
+    const containerUI = document.createElement('button');
+    containerUI.classList.add('btn');
+
+    const iconUI = document.createElement('em');
+    iconUI.classList.add('material-icons-outlined');
+    iconUI.textContent = 'add';
+
+    const titleUI = document.createElement('span');
+    titleUI.textContent = 'Add to Watchlist';
+
+    containerUI.appendChild(iconUI);
+    containerUI.appendChild(titleUI);
 
     return containerUI;
 }
