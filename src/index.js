@@ -1,6 +1,6 @@
-import {initIndex} from "./modules/ui/index-ui";
 import {addWindowListener} from "./modules/utils/event-listener";
-import {initWatchlist} from "./modules/ui/watchlist-ui";
+import {initIndex} from "./modules/pages/index-page";
+import {initWatchlist} from "./modules/pages/watchlist-page";
 
 const INIT_FUNCTIONS = {
     'page-index': () => {

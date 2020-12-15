@@ -1,17 +1,17 @@
 let toggleWatchlist = (movie) => {
     const watchlist = getWatchlist();
-    const index = watchlist.indexOf(movie.title);
+    const index = watchlist.findIndex(m => m.title === movie.title);
     if (index > -1) {
         watchlist.splice(index, 1);
     } else {
-        watchlist.push(movie.title);
+        watchlist.push(movie);
     }
     saveWatchlist(watchlist);
 }
 
 let isInWatchlist = (movie) => {
     const watchlist = getWatchlist();
-    const index = watchlist.indexOf(movie.title);
+    const index = watchlist.findIndex(m => m.title === movie.title);
     return index > -1;
 }
 
