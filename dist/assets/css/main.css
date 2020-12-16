@@ -123,7 +123,7 @@ hr {
 .nav__item {
     flex: 1 1 0;
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,9 +165,9 @@ hr {
     flex-direction: column;
 
     border-radius: 0.25rem;
-    width: 100%;
+    width: 96%;
     background-color: #ffffff;
-    margin-bottom: 1rem;
+    margin: 2%;
 }
 
 .movie__details {
@@ -266,12 +266,8 @@ hr {
     font-size: 18px;
 }
 
-@media only screen and (min-width: 500px) {
-    body {
-        grid-template-areas: 'nav content';
-        grid-template-columns: auto 1fr;
-    }
-
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) {
     h1 {
         font-size: 90px;
     }
@@ -282,6 +278,19 @@ hr {
 
     h3 {
         font-size: 48px;
+    }
+
+    .movie {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        grid-template-areas: 'nav content';
+        grid-template-columns: auto 1fr;
     }
 
     .nav {
@@ -318,21 +327,20 @@ hr {
     }
 
     .movie {
-        width: 48%;
-        margin: 1%;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .movie {
         width: 31%;
-        margin: 1%;
     }
 }
 
-@media only screen and (min-width: 1400px) {
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
     .movie {
-        width: 19%;
-        margin: 0.5%;
+        width: 23%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .movie {
+        width: 14%;
     }
 }
