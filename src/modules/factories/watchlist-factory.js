@@ -1,7 +1,7 @@
 import {createWatchlistButtonUI} from "./watchlist-button-factory";
 
 class WatchlistFactory {
-    createWatchlistUI(movie) {
+    createWatchlistUI(movie, onRemoveClicked) {
         const movieUI = document.createElement('li');
         movieUI.id = `movie-${movie.id}`;
         movieUI.classList.add('list__item');
@@ -14,6 +14,7 @@ class WatchlistFactory {
         const buttonUI = createWatchlistButtonUI(movie, () => {
             const movieUI = document.getElementById(`movie-${movie.id}`);
             movieUI.classList.add('list__item--hide');
+            onRemoveClicked();
         });
 
         movieUI.appendChild(titleUI);

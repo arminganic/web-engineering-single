@@ -87,6 +87,12 @@ h3 {
     border-radius: 0.25rem;
     padding: 1rem;
     width: 100%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.form__input:focus {
+    opacity: 1;
 }
 
 .form__input::placeholder {
@@ -249,8 +255,7 @@ hr {
 .list__item {
     background-color: white;
     display: flex;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin: 2% 0;
     padding: 1rem;
     border-radius: 0.25rem;
     flex-direction: row;
@@ -348,6 +353,6 @@ hr {
 /* Extra large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .movie {
-        width: 14%;
+        width: 18%;
     }
 }

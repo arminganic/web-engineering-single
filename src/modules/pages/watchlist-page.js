@@ -9,15 +9,28 @@ let initWatchlist = () => {
     if (watchlist.length > 0) {
         watchlist.forEach(movie => {
             watchlistUI.appendChild(
-                watchlistFactory.createWatchlistUI(movie, watchlistUI)
+                watchlistFactory.createWatchlistUI(movie, () => {
+                    const watchlist = getWatchlist();
+                    if (watchlist.length === 0) {
+                        watchlistUI.appendChild(
+                            addInfo(watchlistFactory)
+                        );
+                    }
+                })
             );
         });
     } else {
         watchlistUI.appendChild(
-            watchlistFactory.createNoItemsInfo()
+            addInfo(watchlistFactory)
         );
     }
     addFilterFunction(watchlistUI, watchlist);
+}
+
+let addInfo = (watchlistFactory) => {
+    const filterContainerUI = document.getElementById('watchlist-filter-container');
+    filterContainerUI.style.display = 'none';
+    return watchlistFactory.createNoItemsInfo()
 }
 
 let addFilterFunction = (containerUI, watchlist) => {
