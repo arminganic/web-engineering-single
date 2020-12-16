@@ -2,6 +2,7 @@ import {createWatchlistButtonUI} from "./watchlist-button-factory";
 
 let createWatchlistUI = (movie, container) => {
     const movieUI = document.createElement('li');
+    movieUI.id = `movie-${movie.id}`;
     movieUI.classList.add('list__item');
     movieUI.setAttribute('data-movie-id', movie.id);
 
@@ -18,8 +19,6 @@ let createWatchlistUI = (movie, container) => {
 
 let removeFromWatchlist = (movie, container) => {
     const movieUI = document.querySelectorAll(`[data-movie-id="${movie.id}"]`);
-    console.log(typeof movieUI);
-    console.log(movieUI);
     container.removeChild(movieUI[0]);
 }
 
