@@ -6,8 +6,8 @@
     --accent-color: #ffcd03;
     --gray-100: #F5F5F5;
     --gray-500: #9E9E9E;
-
     --nav-color: #0336ffbf;
+    --shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
 }
 
 * {
@@ -89,6 +89,8 @@ h3 {
     width: 100%;
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
+    max-width: 900px;
+    box-shadow: var(--shadow);
 }
 
 .form__input:focus {
@@ -114,7 +116,7 @@ hr {
     bottom: 0;
 
     background-color: var(--nav-color);
-    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
+    box-shadow: var(--shadow);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -174,6 +176,8 @@ hr {
     width: 96%;
     background-color: #ffffff;
     margin: 2%;
+
+    box-shadow: var(--shadow);
 }
 
 .movie__details {
@@ -196,7 +200,7 @@ hr {
 
 .movie:hover .movie__details {
     transform: translateY(0%);
-    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
+    box-shadow: var(--shadow);
 }
 
 .movie__description {
@@ -260,6 +264,8 @@ hr {
     border-radius: 0.25rem;
     justify-content: space-between;
     align-items: center;
+    max-width: 900px;
+    box-shadow: var(--shadow);
 }
 
 .list__item--hide {
@@ -275,6 +281,7 @@ hr {
     background-color: var(--accent-color);
     padding: 1rem;
     border-radius: 0.25rem;
+    max-width: 900px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
