@@ -118,7 +118,6 @@ h3 {
 
 .content {
     grid-area: content;
-    overflow: auto;
 }
 
 .content__title {
@@ -274,6 +273,10 @@ h3 {
 
     .nav__title {
         margin-left: 1rem;
+    }
+
+    .content {
+        overflow: auto;
     }
 
     .content__title {
