@@ -21,6 +21,13 @@ class WatchlistFactory {
 
         return movieUI;
     }
+
+    createNoItemsInfo() {
+        const containerUI = document.createElement('li');
+        containerUI.classList.add('alert');
+        containerUI.textContent = 'There are no movies in your watchlist. Shhh, I\'ve heard that "Tenet" is a nice one! 🤫';
+        return containerUI;
+    }
 }
 
 export default WatchlistFactory;

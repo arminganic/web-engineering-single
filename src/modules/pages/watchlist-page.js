@@ -6,11 +6,17 @@ let initWatchlist = () => {
     const watchlistFactory = new WatchlistFactory();
     const watchlist = getWatchlist();
 
-    watchlist.forEach(movie => {
+    if (watchlist.length > 0) {
+        watchlist.forEach(movie => {
+            watchlistUI.appendChild(
+                watchlistFactory.createWatchlistUI(movie, watchlistUI)
+            );
+        });
+    } else {
         watchlistUI.appendChild(
-            watchlistFactory.createWatchlistUI(movie, watchlistUI)
+            watchlistFactory.createNoItemsInfo()
         );
-    });
+    }
     addFilterFunction(watchlistUI, watchlist);
 }
 
