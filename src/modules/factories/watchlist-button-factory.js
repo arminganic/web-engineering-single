@@ -1,6 +1,6 @@
 import {isInWatchlist, toggleWatchlist} from "../service/watchlist-service";
 
-let createWatchlistButtonUI = (movie, foo, fullWidth = false) => {
+let createWatchlistButtonUI = (movie, completionHandler = () => {}, fullWidth = false) => {
     const buttonUI = document.createElement('button');
     buttonUI.classList.add('btn');
     if (fullWidth) {
@@ -17,7 +17,7 @@ let createWatchlistButtonUI = (movie, foo, fullWidth = false) => {
     buttonUI.addEventListener('click', () => {
         toggleWatchlist(movie);
         refreshButtonContentUI(buttonUI, iconUI, movie);
-        foo();
+        completionHandler();
     });
 
     const buttonTitleUI = document.createElement('span');

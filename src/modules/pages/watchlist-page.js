@@ -1,11 +1,15 @@
 import {getWatchlist} from "../service/watchlist-service";
-import {createWatchlistUI} from "../factories/watchlist-factory";
+import WatchlistFactory from "../factories/watchlist-factory";
 
 let initWatchlist = () => {
     const watchlistUI = document.getElementById('watchlist');
+    const watchlistFactory = new WatchlistFactory();
     const watchlist = getWatchlist();
+
     watchlist.forEach(movie => {
-        createWatchlistUI(movie, watchlistUI);
+        watchlistUI.appendChild(
+            watchlistFactory.createWatchlistUI(movie, watchlistUI)
+        );
     });
     addFilterFunction(watchlistUI, watchlist);
 }

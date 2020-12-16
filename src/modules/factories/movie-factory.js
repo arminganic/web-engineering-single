@@ -6,6 +6,7 @@ let createMovieUI = (movie, container) => {
 
     const posterUI = document.createElement('img');
     posterUI.classList.add('movie__poster');
+    posterUI.alt = `Poster of ${movie.title}`;
     posterUI.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
     const overviewUI = createOverviewUI(movie);
@@ -57,7 +58,7 @@ let createDetailsUI = (movie) => {
     const actionsUI = document.createElement('div');
     actionsUI.classList.add('movie__actions');
 
-    const watchlistButtonUI = createWatchlistButtonUI(movie, () => {}, true);
+    const watchlistButtonUI = createWatchlistButtonUI(movie, undefined, true);
     actionsUI.appendChild(watchlistButtonUI);
 
     containerUI.appendChild(overviewUI);
